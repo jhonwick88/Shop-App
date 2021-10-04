@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.pintarmedia.shopapp.NavigationHost
 import com.pintarmedia.shopapp.R
 import kotlinx.android.synthetic.main.login_fragment.*
 import kotlinx.android.synthetic.main.login_fragment.view.*
@@ -23,6 +24,7 @@ class LoginFragment: Fragment() {
                 password_text_input.error = getString(R.string.shr_error_password)
             }else{
                 password_text_input.error = null
+                (activity as NavigationHost).navigationTo(ListItemFragment(),false)
                 Toast.makeText(it.context, "Ok next", Toast.LENGTH_SHORT).show()
             }
             vie.password_edit_text.setOnKeyListener { _, _, _ ->
