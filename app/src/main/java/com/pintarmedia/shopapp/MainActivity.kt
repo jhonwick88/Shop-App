@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity(), NavigationHost {
     }
 
     override fun navigationTo(fragment: Fragment, addToBackStack: Boolean) {
-        TODO("Not yet implemented")
         val trans = supportFragmentManager.beginTransaction().replace(R.id.container, fragment)
         if (addToBackStack){
             trans.addToBackStack(null)
